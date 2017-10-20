@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <title>BBS</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <form method="post">
+        <input type="text" name="name2">
+    <input type="submit" value="Post!">
+     </form>
+    <ul>
+        <% for (var i=0; i < posts.length; i++){%>
+        <li><%= posts[i]%></li>
+        <% } %>
+    </ul>
+    <form method="post">
+         <p>
+          Twitetr ID 
+        <input type="text" name="Twi_id" size="40">
+        <input type="submit" value="送信">
+        <p><input type="range" name="sample1" style="width:150px"> 
+        <input type="submit" name="test1" value="送信"> </p>
+        </p>
+    </form>
+</body>
+</html>

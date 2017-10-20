@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.js"></script>
+        <script>
+        var saveShakeY=0,shakeSum=0,count=0;
+        function setup() {
+          createCanvas(displayWidth, displayHeight);
+          textSize(50);
+          frameRate(60);
+        }
+        function draw() {
+          fill(map(shakeSum, 0, 1200, 0, 255));
+          rect(0, 0, width, height);
+          count++;
+          if (count>5)
+          {
+            count=0;
+            if (shakeSum>10)
+            {
+              fill(255,map(shakeSum,0,1200,255,5),map(shakeSum,0,1200,255,5));
+              textSize(map(shakeSum,0,1200,150,300));
+              text(shakeSum, (random(width)+(width/2))/2, (random(height)+(height/2))/2);
+            }
+            shakeSum=0;
+          }
+          shakeSum+=floor(abs(mouseY-saveShakeY));
+          saveShakeY=mouseY;
+        }
+
+        </script>
+    </body>
+</html>
